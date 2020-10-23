@@ -178,7 +178,7 @@ lock() function order should be same.
   std_thread thread1()
   {
     @int[1].lock();
-    @int[0].lock();
+    @int[0].lock(); // This lock will cause deadlock! Compiler will raise 'Deadlock Violation Error'.
     printf('t2');
     rerun(0);
   }
@@ -204,7 +204,7 @@ lock() function order should be same.
   std_thread thread2()
   {
     @int[0].lock();
-    @int[2].lock(); // This lock will cause deadlock! Compiler will raise 'Deadlock Violation Error'.
+    @int[2].lock();
     printf('t2');
     rerun(0);
   }
