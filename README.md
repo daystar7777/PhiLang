@@ -1,4 +1,4 @@
-# PhiLang(ΦLang)
+# PhiLang(ΦLang) - Everything is finite.
 
 *PhiLang(ΦLang)* is a programming language targeting stable and safe multi-threaded programs or tutorial purpose for newbie.
 
