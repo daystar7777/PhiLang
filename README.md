@@ -35,7 +35,7 @@ Following is using previous memory configuration.
 You may assign any memory type to thread.
 ```clj
   define std_thread my_thread; // defines my_thread as thread type
-  my_thread.memory = thread_memory_A;  // assign thread_memory_A type to std_thread
+  my_thread.memory = thread_memory_A;  // assign thread_memory_A type to my_thread
 ```
 Now global memory is set as global_memory_A type.
 And my_thread will have thread_memory_A type.
