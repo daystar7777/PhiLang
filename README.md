@@ -62,7 +62,7 @@ Output will be '11'.
 
 ## Daemon example
 ```clj
-  // Simple daemon Example
+  // Simple daemon Example 1
   use standard_memory;
   use standard_thread;
   use standard_consoleio;
@@ -75,6 +75,42 @@ Output will be '11'.
   }
 ```
 Output will be 'TickTickTickTickTickTickTickTick....'.
+
+```clj
+  // Simple daemon Example 2
+  use standard_memory;
+  use standard_thread;
+  use standard_consoleio;
+  
+  std_thread thread1()  // You may use any name to thread except reserved keyword.
+  {
+    printf('Tick');
+    
+    rerun(1000); // Rerun after 1000 tick
+  }
+```
+Output will be 'TickTickTickTickTickTickTickTick....'.
+More than 1000 tick would passed between 'Tick' and 'Tick'.
+Tick could be different by hardware.
+
+
+```clj
+  // Simple daemon Example 3
+  use standard_memory;
+  use standard_thread;
+  use standard_consoleio;
+  use standard_time;
+  
+  std_thread thread1()  // You may use any name to thread except reserved keyword.
+  {
+    printf('Tick');
+    
+    rerun(100.second); // Rerun after 100 seconds
+  }
+```
+Output will be 'TickTickTickTickTickTickTickTick....'.
+More than 100 seconds would passed between 'Tick' and 'Tick'. (as soon as possible after 100 seconds)
+Tick could be different by hardware.
 
 ## Multi-thread example
 Following example is simple multi-thread program.
