@@ -82,7 +82,7 @@ Output will be 'TickTickTickTickTickTickTickTick....'.
   use standard_thread;
   use standard_consoleio;
   
-  std_thread thread1()  // You may use any name to thread except reserved keyword.
+  std_thread thread1() 
   {
     printf('Tick');
     
@@ -101,7 +101,7 @@ Tick could be different by hardware.
   use standard_consoleio;
   use standard_time;
   
-  std_thread thread1()  // You may use any name to thread except reserved keyword.
+  std_thread thread1() 
   {
     printf('Tick');
     
