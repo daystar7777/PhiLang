@@ -222,7 +222,7 @@ And all thread release locked memory when it returns.
   int[0]=0;
   std_thread thread1()
   {
-    // You cannot place anything here
+    // You would better not place anything here
     @int[0].lock(); // wait until lock succeed
     printf('t1');
     rerun(0); // Rerun as soon as possible
@@ -230,7 +230,7 @@ And all thread release locked memory when it returns.
 
   std_thread thread1()
   {
-    // You cannot place anything here
+    // You would better not place anything here
     @int[0].lock(); // wait until lock succeed
     printf('t2');
     rerun(0); // Rerun as soon as possible
