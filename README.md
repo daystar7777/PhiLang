@@ -102,7 +102,7 @@ ex) 'TickTockTiTocckk...'.
 
 
 ## Function call example
-Following example is simple function call.
+Following example is a simple function call. (void return)
 ```clj
   // Simple function call
   use standard_memory;
@@ -124,7 +124,29 @@ Following example is simple function call.
 The output is 'TickTickTickTickTickTickTickTickTickTickTickTickTickTick....'.
 
 
-## Scope rule example 1
+Following example is an another simple function call. (with return)
+```clj
+  // Simple function call
+  use standard_memory;
+  use standard_thread;
+  use standard_consoleio;
+  
+  function char[30] function_A(char[5] arg0)
+  {
+    return arg0;  // returns arg0
+  }
+  
+  std_thread thread1()
+  {    
+    char[0..30] = function_A('Tick'); // 'Tick' is char[5] memory. ['T'], ['i'], ['c'], ['k'], ['\0']
+    print(char[0..30]);
+    rerun(0); // Rerun as soon as possible
+  }
+```
+The output is 'TickTickTickTickTickTickTickTickTickTickTickTickTickTick....'.
+
+
+## Scope rule example
 Following example shows scope rule.
 ```clj
   // Scope rule
@@ -307,4 +329,46 @@ Following example shows how to de-alias an alias
 The output is '10'.
 
 
+# Class and configuration modification
+Following example shows simple class of ΦLang.
+```clj
+  class Person {
+    char[30] as name; // member define and set alias
+    int[1] as age;
+    char[1] as sex;
+    function initialize() { // called when allocated. Special class function.
+      age=20;
+    }
+    function int getAge() {
+      return age; // same as 'return int[0];'
+    }
+  }
+  global.memory.add(Person[10]);  // add global memory 10*Person class. You may also add it to thread memory configuration.
+  my_thread thread1()
+  {
+    printf('%d',@Person[0].getAge());
+  }
+```
+'Configuration modification is not recommended. This is just for tutorial and newbie.'
+Please include it to your first memory and thread configuration.
+
+The output will be '20'.
+
+
+# Multiple invocation of thread
+If you want to execute same thread in multiple, you may use following syntax.
+```clj
+  // Multiple invocation of thread
+  use standard_memory;
+  use standard_thread;
+  use standard_consoleio;
+  
+  std_thread#5 thread0() // #5 means execute upto 5 times simultaneously.
+  {
+    printf('Tick');
+    rerun(0); // Rerun as soon as possible
+  }
+```
+thread0 will be executed 5 times simultaneously.
+The output could be 'TTTTTiciiickkk....'.
 
