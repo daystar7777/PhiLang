@@ -90,7 +90,7 @@ Output will be 'TickTickTickTickTickTickTickTick....'.
   }
 ```
 Output will be 'TickTickTickTickTickTickTickTick....'.
-More than 1000 tick would passed between 'Tick' and 'Tick'.
+More than 1000 tick would be passed between 'Tick' and 'Tick'.
 Tick could be different by hardware.
 
 
@@ -109,7 +109,7 @@ Tick could be different by hardware.
   }
 ```
 Output will be 'TickTickTickTickTickTickTickTick....'.
-More than 100 seconds would passed between 'Tick' and 'Tick'. (as soon as possible after 100 seconds)
+More than 100 seconds would be passed between 'Tick' and 'Tick'. (as soon as possible after 100 seconds)
 
 
 ## Multi-thread example
