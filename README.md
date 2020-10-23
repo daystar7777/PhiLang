@@ -53,6 +53,7 @@ Output will be '11'.
 ```
 Output will be 'TickTickTickTickTickTickTickTick....'.
 
+## Multi-thread example
 Following example is simple multi-thread program.
 ```clj
   // Simple multi-thread example
