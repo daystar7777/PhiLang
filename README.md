@@ -110,7 +110,7 @@ Tick could be different by hardware.
 ```
 Output will be 'TickTickTickTickTickTickTickTick....'.
 More than 100 seconds would passed between 'Tick' and 'Tick'. (as soon as possible after 100 seconds)
-Tick could be different by hardware.
+
 
 ## Multi-thread example
 Following example is simple multi-thread program.
