@@ -65,9 +65,9 @@ Output will be '11'.
   // Simple daemon Example
   use standard_memory;
   use standard_thread;
-  use standard_consoleio; // Standard console I/O library
+  use standard_consoleio;
   
-  std_thread thread1()  // You may use any name to thread
+  std_thread thread1()  // You may use any name to thread except reserved keyword.
   {
     printf('Tick');
     
@@ -82,7 +82,7 @@ Following example is simple multi-thread program.
   // Simple multi-thread example
   use standard_memory;
   use standard_thread;
-  use standard_consoleio; // Standard console I/O library
+  use standard_consoleio;
   
   std_thread thread0()
   {
@@ -107,7 +107,7 @@ Following example is simple function call.
   // Simple function call
   use standard_memory;
   use standard_thread;
-  use standard_consoleio; // Standard console I/O library
+  use standard_consoleio;
   
   function function_A(char[5] arg0)  // arg0 is char * 5 length memory. You may use char[6] or char[999] for this. But char[4] or less will cause 'Access Violation Error'.
   {
@@ -130,7 +130,7 @@ Following example shows scope rule.
   // Scope rule
   use standard_memory;
   use standard_thread;
-  use standard_consoleio; // Standard console I/O library
+  use standard_consoleio;
   
   function function_A(int[0] arg0)
   {
