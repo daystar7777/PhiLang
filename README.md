@@ -409,3 +409,23 @@ If you want to execute same thread in multiple, you may use following syntax.
 thread0 will be executed 5 times simultaneously.
 The output could be 'TTTTTiciiickkk....'.
 
+# Signal or message based multi-threading
+You may want to execute threads when signal or message arrives.
+Following shows the case
+```clj
+  // Message based multi-threading
+  use standard_memory;
+  use standard_thread;
+  use standard_consoleio;
+  
+  int[0]=0;
+  
+  std_signal_thread(@int[0])#10 thread0(int[1] as msg) // if @int[0] changed, thread0 will be invocated upto 10 threads simultaneously. 
+  {
+    printf('Tick %d',msg);
+    rerun(0); // Rerun as soon as possible
+  }
+```
+If global variable @int[0] changed, thread0 will be executed upto 10 threads simultaneously.
+Argument is the value of signal.
+The output could be 'TTTTTiciiickk  2 c3....'.
