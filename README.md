@@ -118,7 +118,7 @@ Following example shows scope rule.
   int[0]=10;
   std_thread thread1()
   {    
-    @int[0]= @int[0] + 1; // operand @ means parent's scope
+    @int[0]= @int[0] + 1; // operator @ means parent's scope
     function_A( @int[0] );
     rerun(0); // Rerun as soon as possible
   }
@@ -239,4 +239,48 @@ But there could be undetectable deadlocks as following example.
   }
 ```
 If variable exists in locking variable, deadlock is undetectable.
+
+
+## Alias for array
+Following example shows alias for array.
+```clj
+  std_thread thread1()
+  {
+    int[0]=10;
+    int[1]=20;
+    int[2]=30;
+    int[3]=40;
+    alias int[1..3] array_A[];
+    
+    array_A[0] = array_A[2] + array[1]; // This is same as 'int[1] = int[3] + int[2];'
+    printf('%d',array_A[0]);
+  }
+
+```
+The output is '70'.
+
+## Alias for N dimension array
+Following example shows alias for array.
+```clj
+  std_thread thread1()
+  {
+    alias int[10..30] array_A[2][2][5]; // now you may access array_A[][][]
+  }
+
+```
+
+## De-alias
+Following example shows how to de-alias an alias
+```clj
+  std_thread thread1()
+  {
+    alias int[10..30] array_A[2][2][5];
+    int[0] = #array_A[0][0][0]; // # is de-alias operator
+    printf('%d', int[0]);
+  }
+
+```
+The output is '10'.
+
+
 
