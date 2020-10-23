@@ -363,6 +363,7 @@ Following example shows how to de-alias an alias
 
 ```
 The output is '10'.
+[Warning] You cannot use de-alias operator to argument. It will raise 'Dealias Operator Error' Exception.
 
 
 # Class and configuration modification
