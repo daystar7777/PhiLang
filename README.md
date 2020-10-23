@@ -363,7 +363,7 @@ Following example shows how to de-alias an alias
 
 ```
 The output is '10'.
-[Warning] If you use de-alias operator '#' to argument alias, it will show some value. The value will be vary between compiler implementation.
+[Warning] If you use de-alias operator '#' to argument alias, it will show some value. The value will vary between compiler implementation.
 
 
 # Class and configuration modification
