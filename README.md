@@ -145,8 +145,8 @@ Following example is a simple function call. (void return)
   use standard_thread;
   use standard_consoleio;
   
-  function function_A(char[5] arg0)  // arg0 is char * 5 length memory. You may use char[6] or char[999] for this. But char[4] or less will cause 'Access Violation Error'.
-  {
+  function function_A(char[5] as arg0)  // arg0 is char * 5 length memory. You may use char[6] or char[999] for this. But char[4] or less will cause 'Access Violation Error'.
+  { // arg0 is argument alias.
     printf(arg0);
     return;   // null return
   }
@@ -363,7 +363,7 @@ Following example shows how to de-alias an alias
 
 ```
 The output is '10'.
-[Warning] You cannot use de-alias operator to argument. It will raise 'Dealias Operator Error' Exception.
+[Warning] If you use de-alias operator '#' to argument alias, it will show some value. The value will be vary between compiler implementation.
 
 
 # Class and configuration modification
