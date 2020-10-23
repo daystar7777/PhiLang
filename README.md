@@ -173,7 +173,7 @@ lock() function order should be same.
     @int[0].lock();
     @int[1].lock();
     printf('t1');
-    rerun(0); // Rerun as soon as possible
+    rerun(0);
   }
 
   std_thread thread1()
@@ -181,7 +181,7 @@ lock() function order should be same.
     @int[1].lock();
     @int[0].lock();
     printf('t2');
-    rerun(0); // Rerun as soon as possible
+    rerun(0);
   }
 ```
 
@@ -199,23 +199,23 @@ lock() function order should be same.
     @int[0].lock();
     @int[1].lock();
     printf('t1');
-    rerun(0); // Rerun as soon as possible
+    rerun(0);
   }
 
   std_thread thread2()
   {
     @int[0].lock();
-    @int[2].lock();
+    @int[2].lock(); // This lock will cause deadlock! Compiler will raise 'Deadlock Violation Error'.
     printf('t2');
-    rerun(0); // Rerun as soon as possible
+    rerun(0);
   }
 
   std_thread thread3()
   {
     @int[2].lock();
-    @int[1].lock();
+    @int[1].lock();  // This lock will cause deadlock! Compiler will raise 'Deadlock Violation Error'.
     printf('t3');
-    rerun(0); // Rerun as soon as possible
+    rerun(0);
   } 
 ```
 
@@ -226,17 +226,17 @@ But there could be undetectable deadlocks as following example.
   std_thread thread1()
   {
     @int[0].lock();
-    @int[@int[0]].lock();
+    @int[@int[0]].lock(); // Variables in lock variable
     printf('t1');
-    rerun(0); // Rerun as soon as possible
+    rerun(0);
   }
 
   std_thread thread1()
   {
     @int[1].lock();
-    @int[@int[1]].lock();
+    @int[@int[1]].lock(); // Variables in lock variable
     printf('t2');
-    rerun(0); // Rerun as soon as possible
+    rerun(0);
   }
 ```
 If variable exists in locking variable, deadlock is undetectable.
