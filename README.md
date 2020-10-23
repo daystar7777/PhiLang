@@ -167,7 +167,7 @@ Following example is an another simple function call. (with return)
   use standard_thread;
   use standard_consoleio;
   
-  function char[30] function_A(char[5] arg0)
+  function char[30] function_A(char[5] as arg0)
   {
     return arg0;  // returns arg0
   }
@@ -190,7 +190,7 @@ Following example shows scope rule.
   use standard_thread;
   use standard_consoleio;
   
-  function function_A(int[0] arg0)
+  function function_A(int[0] as arg0)
   {
     int[0] = 1; // local scope
     printf('%d\n' , arg0+int[0] );
