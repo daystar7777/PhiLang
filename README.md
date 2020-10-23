@@ -35,7 +35,7 @@ Following is using previous memory configuration.
 You may assign any memory type to thread.
 ```clj
   define std_thread my_thread; // defines my_thread as thread type
-  my_thread.memory = thread_memory_A;  // assign thread_memory_A type to my_thread
+  my_thread.memory = thread_memory_A.memory;  // assign thread_memory_A type to my_thread
   my_thread.nice = 0; // nice is priority of thread. 0 means balanced. higher means urgent and higher priority
 ```
 And my_thread will have thread_memory_A type.
@@ -210,7 +210,6 @@ The output is '12\n13\n14\n....'.
 ## Lock
 Following example shows locking memory.
 You may lock memory with lock() function.
-You cannot place anything before lock() function except lock() function.
 And all thread release locked memory when it returns.
 
 ```clj
