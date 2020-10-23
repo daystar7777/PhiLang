@@ -1,6 +1,6 @@
 # PhiLang(ΦLang)
 
-*PhiLang(ΦLang)* is a programming language targeting stable and multi-threaded programs or tutorial purpose for newbie.
+*PhiLang(ΦLang)* is a programming language targeting stable and safe multi-threaded programs or tutorial purpose for newbie.
 
 ### Examples
 
