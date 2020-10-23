@@ -17,6 +17,30 @@ Simeplest example of PhiLang(ΦLang).
 ```
 Simplese Example doesn't have output.
 
+## Simple example of memory configuration
+Following is a simple example of memory configuration.
+```clj
+  global {  // global memory configuration
+    int[100]; // pre-allocates 100 integer(4 byte)
+    char[1000]; // pre-allocates 1000 char(1 byte)
+  };
+  thread_memory_A {
+    int[20];  // allocates 20 integer per thread_memory_A type
+    char[100];  // allocates 100 character per thread_memory_A type
+  };
+```
+
+## Simple example of thread configuration
+Following is using previous memory configuration.
+You may assign any memory type to thread.
+```clj
+  define std_thread my_thread; // defines my_thread as thread type
+  my_thread.memory = thread_memory_A;  // assign thread_memory_A type to std_thread
+```
+Now global memory is set as global_memory_A type.
+And my_thread will have thread_memory_A type.
+
+
 ## Alias example
 ```clj
   // Define Alias
