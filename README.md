@@ -5,7 +5,7 @@
 ### Examples
 
 
-Following is the simeplest example of PhiLang(ΦLang).
+## Following is the simeplest example of PhiLang(ΦLang).
 ```clj
   // Simplest Example
   use standard_memory;  // Memory configuration
@@ -18,6 +18,7 @@ Following is the simeplest example of PhiLang(ΦLang).
 ```
 Simplese Example doesn't have output.
 
+## Alias example
 ```clj
   // Define Alias
   use standard_memory;
@@ -36,6 +37,7 @@ Simplese Example doesn't have output.
 ```
 Output will be '11'.
 
+## Daemon example
 ```clj
   // Simple daemon Example
   use standard_memory;
@@ -75,6 +77,7 @@ The output could be any combination of 'Tick' and 'Tock'.
 ex) 'TickTockTiTocckk...'.
 
 
+## Function call example
 Following example is simple function call.
 ```clj
   // Simple function call
@@ -97,6 +100,7 @@ Following example is simple function call.
 The output is 'TickTickTickTickTickTickTickTickTickTickTickTickTickTick....'.
 
 
+## Scope rule example
 Following example shows scope rule.
 ```clj
   // Simple function call
