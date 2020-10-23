@@ -4,8 +4,7 @@
 
 ### Examples
 
-
-## Following is the simeplest example of PhiLang(ΦLang).
+Simeplest example of PhiLang(ΦLang).
 ```clj
   // Simplest Example
   use standard_memory;  // Memory configuration
